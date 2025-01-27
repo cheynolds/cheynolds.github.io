@@ -1,0 +1,72 @@
+---
+# This front matter block is required!
+---
+
+
+
+@import "minimal-mistakes";
+
+// Constrain the width of the content
+.container {
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;    /* Center the container */
+  padding: 0 1rem;   /* Add spacing on smaller screens */
+}
+
+// Grid layout for the article list
+.entry__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+// Individual grid items
+.entry__list-item {
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.entry__list-item:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+
+
+}
+
+
+
+
+// Article titles
+.entry__title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+// Meta info
+.entry__meta {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+// Article excerpts
+.entry__excerpt {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+// Images for grid items
+.entry__image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+

@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+
+<div class="page-content container">
+  <header class="entry__header">
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.description }}</p>
+    <p>For shorter, more regular tidbits &mdash; peruse the <a href="/notes/">notes section</a>.</p>
+  </header>
+
+  <ul class="entry__list grid">
+    {% for post in site.articles %}
+      <li class="entry__list-item">
+        <article class="entry">
+          <h2 class="entry__title">
+            <a class="entry__link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h2>
+          <div class="entry__meta entry__inline-group">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              <a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.date | date: "%b %d, %Y" }}</a>
+            </time>
+            <span>~</span>
+            <span>Read in {{ post.reading_time | append: ' mins' }}</span>
+          </div>
+          {% if post.image %}
+            <div class="entry__image">
+              <img
+                src="{{ post.image }}"
+                alt="{{ post.image_alt | default: post.title }}"
+                class="img--th-grid"
+              />
+            </div>
+          {% endif %}
+          <div class="entry__excerpt prose">
+            <div class="prose">
+              {{ post.excerpt | strip_html }}
+            </div>
+          </div>
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
